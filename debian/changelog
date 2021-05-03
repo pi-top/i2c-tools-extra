@@ -1,5 +1,6 @@
-i2c-tools (1.0.0-1) unstable; urgency=medium
+i2c-tools-extra (1.0.0-1) unstable; urgency=medium
 
   * Initial release
+  * Add `i2cping` tool
 
  -- pi-top <deb-maintainers@pi-top.com>  Mon, 03 May 2021 20:04:19 +0000
