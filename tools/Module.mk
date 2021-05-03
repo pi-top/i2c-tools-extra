@@ -77,14 +77,14 @@ clean-tools:
 	$(RM) $(addprefix $(TOOLS_DIR)/,*.o $(TOOLS_TARGETS))
 
 install-tools: $(addprefix $(TOOLS_DIR)/,$(TOOLS_TARGETS))
-	$(INSTALL_DIR) $(DESTDIR)$(sbindir) $(DESTDIR)$(man8dir)
+	$(INSTALL_DIR) $(DESTDIR)$(bindir) $(DESTDIR)$(man8dir)
 	for program in $(TOOLS_TARGETS) ; do \
-	$(INSTALL_PROGRAM) $(TOOLS_DIR)/$$program $(DESTDIR)$(sbindir) ; \
+	$(INSTALL_PROGRAM) $(TOOLS_DIR)/$$program $(DESTDIR)$(bindir) ; \
 	$(INSTALL_DATA) $(TOOLS_DIR)/$$program.8 $(DESTDIR)$(man8dir) ; done
 
 uninstall-tools:
 	for program in $(TOOLS_TARGETS) ; do \
-	$(RM) $(DESTDIR)$(sbindir)/$$program ; \
+	$(RM) $(DESTDIR)$(bindir)/$$program ; \
 	$(RM) $(DESTDIR)$(man8dir)/$$program.8 ; done
 
 all: all-tools

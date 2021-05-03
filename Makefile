@@ -10,7 +10,6 @@
 DESTDIR	?=
 PREFIX	?= /usr/local
 bindir	= $(PREFIX)/bin
-sbindir	= $(PREFIX)/sbin
 mandir	= $(PREFIX)/share/man
 man8dir	= $(mandir)/man8
 incdir	= $(PREFIX)/include
