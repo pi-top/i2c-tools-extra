@@ -24,14 +24,14 @@ TOOLS_TARGETS	:= i2cping
 # Programs
 #
 
-$(TOOLS_DIR)/i2cdetect: $(TOOLS_DIR)/i2cdetect.o $(TOOLS_DIR)/i2cbusses.o $(LIB_DEPS)
+$(TOOLS_DIR)/i2cping: $(TOOLS_DIR)/i2cping.o $(TOOLS_DIR)/i2cbusses.o $(LIB_DEPS)
 	$(CC) $(LDFLAGS) -o $@ $^ $(TOOLS_LDFLAGS)
 
 #
 # Objects
 #
 
-$(TOOLS_DIR)/i2cdetect.o: $(TOOLS_DIR)/i2cdetect.c $(TOOLS_DIR)/i2cbusses.h version.h $(INCLUDE_DIR)/i2c/smbus.h
+$(TOOLS_DIR)/i2cping.o: $(TOOLS_DIR)/i2cping.c $(TOOLS_DIR)/i2cbusses.h version.h $(INCLUDE_DIR)/i2c/smbus.h
 	$(CC) $(CFLAGS) $(TOOLS_CFLAGS) -c $< -o $@
 
 $(TOOLS_DIR)/i2cbusses.o: $(TOOLS_DIR)/i2cbusses.c $(TOOLS_DIR)/i2cbusses.h
