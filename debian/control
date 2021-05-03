@@ -1,4 +1,4 @@
-Source: i2c-tools
+Source: i2c-tools-extra
 Section: utils
 Priority: optional
 Build-Depends:
