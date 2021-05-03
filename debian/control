@@ -5,17 +5,16 @@ Build-Depends:
  debhelper-compat (= 12),
 Rules-Requires-Root: no
 Standards-Version: 4.5.1
-Maintainer: Aurelien Jarno <aurel32@debian.org>
-Homepage: https://www.kernel.org/pub/software/utils/i2c-tools/
+Maintainer: pi-top <deb-maintainers@pi-top.com>
+Homepage: https://pi-top.com
 
-Package: i2c-tools
+Package: i2c-tools-extra
 Architecture: linux-any
 Section: utils
-Conflicts: lm-sensors (<< 1:3.0.0-1)
-Depends: ${shlibs:Depends}, ${perl:Depends}, ${misc:Depends}, adduser, udev
-Recommends: read-edid
-Suggests: libi2c-dev, python-smbus
-Description: heterogeneous set of I2C tools for Linux
- This package contains a heterogeneous set of I2C tools for Linux: a bus
- probing tool, a chip dumper, register-level access helpers, EEPROM
- decoding scripts, and more.
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ i2c-tools,
+Description: additional I2C tools for Linux
+ This package contains I2C tools for Linux in addition to i2c-tools: an
+ address probing tool.
