@@ -10,7 +10,6 @@ Homepage: https://pi-top.com
 
 Package: i2c-tools-extra
 Architecture: linux-any
-Section: utils
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
