@@ -18,7 +18,7 @@ else
 TOOLS_LDFLAGS	:= -L$(LIB_DIR) -li2c
 endif
 
-TOOLS_TARGETS	:= i2cdetect
+TOOLS_TARGETS	:= i2cping
 
 #
 # Programs
