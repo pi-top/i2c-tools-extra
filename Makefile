@@ -10,7 +10,6 @@
 DESTDIR	?=
 PREFIX	?= /usr/local
 bindir	= $(PREFIX)/bin
-sbindir	= $(PREFIX)/sbin
 mandir	= $(PREFIX)/share/man
 man8dir	= $(mandir)/man8
 incdir	= $(PREFIX)/include
@@ -57,5 +56,5 @@ all:
 
 EXTRA	:=
 #EXTRA	+= eeprog py-smbus
-SRCDIRS	:= include lib eeprom stub tools $(EXTRA)
+SRCDIRS	:= include lib tools $(EXTRA)
 include $(SRCDIRS:%=%/Module.mk)

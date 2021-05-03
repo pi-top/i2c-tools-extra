@@ -18,25 +18,13 @@ else
 TOOLS_LDFLAGS	:= -L$(LIB_DIR) -li2c
 endif
 
-TOOLS_TARGETS	:= i2cdetect i2cdump i2cset i2cget i2ctransfer
+TOOLS_TARGETS	:= i2cdetect
 
 #
 # Programs
 #
 
 $(TOOLS_DIR)/i2cdetect: $(TOOLS_DIR)/i2cdetect.o $(TOOLS_DIR)/i2cbusses.o $(LIB_DEPS)
-	$(CC) $(LDFLAGS) -o $@ $^ $(TOOLS_LDFLAGS)
-
-$(TOOLS_DIR)/i2cdump: $(TOOLS_DIR)/i2cdump.o $(TOOLS_DIR)/i2cbusses.o $(TOOLS_DIR)/util.o $(LIB_DEPS)
-	$(CC) $(LDFLAGS) -o $@ $^ $(TOOLS_LDFLAGS)
-
-$(TOOLS_DIR)/i2cset: $(TOOLS_DIR)/i2cset.o $(TOOLS_DIR)/i2cbusses.o $(TOOLS_DIR)/util.o $(LIB_DEPS)
-	$(CC) $(LDFLAGS) -o $@ $^ $(TOOLS_LDFLAGS)
-
-$(TOOLS_DIR)/i2cget: $(TOOLS_DIR)/i2cget.o $(TOOLS_DIR)/i2cbusses.o $(TOOLS_DIR)/util.o $(LIB_DEPS)
-	$(CC) $(LDFLAGS) -o $@ $^ $(TOOLS_LDFLAGS)
-
-$(TOOLS_DIR)/i2ctransfer: $(TOOLS_DIR)/i2ctransfer.o $(TOOLS_DIR)/i2cbusses.o $(TOOLS_DIR)/util.o $(LIB_DEPS)
 	$(CC) $(LDFLAGS) -o $@ $^ $(TOOLS_LDFLAGS)
 
 #
@@ -46,22 +34,7 @@ $(TOOLS_DIR)/i2ctransfer: $(TOOLS_DIR)/i2ctransfer.o $(TOOLS_DIR)/i2cbusses.o $(
 $(TOOLS_DIR)/i2cdetect.o: $(TOOLS_DIR)/i2cdetect.c $(TOOLS_DIR)/i2cbusses.h version.h $(INCLUDE_DIR)/i2c/smbus.h
 	$(CC) $(CFLAGS) $(TOOLS_CFLAGS) -c $< -o $@
 
-$(TOOLS_DIR)/i2cdump.o: $(TOOLS_DIR)/i2cdump.c $(TOOLS_DIR)/i2cbusses.h $(TOOLS_DIR)/util.h version.h $(INCLUDE_DIR)/i2c/smbus.h
-	$(CC) $(CFLAGS) $(TOOLS_CFLAGS) -c $< -o $@
-
-$(TOOLS_DIR)/i2cset.o: $(TOOLS_DIR)/i2cset.c $(TOOLS_DIR)/i2cbusses.h $(TOOLS_DIR)/util.h version.h $(INCLUDE_DIR)/i2c/smbus.h
-	$(CC) $(CFLAGS) $(TOOLS_CFLAGS) -c $< -o $@
-
-$(TOOLS_DIR)/i2cget.o: $(TOOLS_DIR)/i2cget.c $(TOOLS_DIR)/i2cbusses.h $(TOOLS_DIR)/util.h version.h $(INCLUDE_DIR)/i2c/smbus.h
-	$(CC) $(CFLAGS) $(TOOLS_CFLAGS) -c $< -o $@
-
-$(TOOLS_DIR)/i2ctransfer.o: $(TOOLS_DIR)/i2ctransfer.c $(TOOLS_DIR)/i2cbusses.h $(TOOLS_DIR)/util.h version.h
-	$(CC) $(CFLAGS) $(TOOLS_CFLAGS) -c $< -o $@
-
 $(TOOLS_DIR)/i2cbusses.o: $(TOOLS_DIR)/i2cbusses.c $(TOOLS_DIR)/i2cbusses.h
-	$(CC) $(CFLAGS) $(TOOLS_CFLAGS) -c $< -o $@
-
-$(TOOLS_DIR)/util.o: $(TOOLS_DIR)/util.c $(TOOLS_DIR)/util.h
 	$(CC) $(CFLAGS) $(TOOLS_CFLAGS) -c $< -o $@
 
 #
@@ -77,14 +50,14 @@ clean-tools:
 	$(RM) $(addprefix $(TOOLS_DIR)/,*.o $(TOOLS_TARGETS))
 
 install-tools: $(addprefix $(TOOLS_DIR)/,$(TOOLS_TARGETS))
-	$(INSTALL_DIR) $(DESTDIR)$(sbindir) $(DESTDIR)$(man8dir)
+	$(INSTALL_DIR) $(DESTDIR)$(bindir) $(DESTDIR)$(man8dir)
 	for program in $(TOOLS_TARGETS) ; do \
-	$(INSTALL_PROGRAM) $(TOOLS_DIR)/$$program $(DESTDIR)$(sbindir) ; \
+	$(INSTALL_PROGRAM) $(TOOLS_DIR)/$$program $(DESTDIR)$(bindir) ; \
 	$(INSTALL_DATA) $(TOOLS_DIR)/$$program.8 $(DESTDIR)$(man8dir) ; done
 
 uninstall-tools:
 	for program in $(TOOLS_TARGETS) ; do \
-	$(RM) $(DESTDIR)$(sbindir)/$$program ; \
+	$(RM) $(DESTDIR)$(bindir)/$$program ; \
 	$(RM) $(DESTDIR)$(man8dir)/$$program.8 ; done
 
 all: all-tools
