@@ -1,3 +1,31 @@
+i2c-tools-extra (1.0.0-3) unstable; urgency=medium
+
+  [ Mike Roberts ]
+  * First pass at creating upstream tarball in CI
+  * Handle upstream tarball in Docker image
+  * Strip down to `i2cdetect` (#2)
+  * Rename package to i2c-tools-extra
+  * Update version.h
+  * Update README
+  * i2c-tools-extra.install
+  * Fix Lintian warnings
+  * Drop i2cdetect manual
+  * changelog - fix package name
+  * Source: i2c-tools-extra
+  * TOOLS_TARGETS	:= i2cping
+  * Follow through with rest of Makefile
+  * Fix comment location
+  * Add 'no-manual-page' Lintian override
+  * Suppress 'initial-upload-closes-no-bugs' tag for Lintian when releasing
+
+  [ Jorge Capona ]
+  * Add Jenkinsfile
+
+  [ github-actions[bot] ]
+  * [CI] Update debian/changelog for next release (#1)
+
+ -- pi-top <deb-maintainers@pi-top.com>  Thu, 13 May 2021 16:19:43 +0000
+
 i2c-tools-extra (1.0.0-2) unstable; urgency=medium
 
   * Update packaging
