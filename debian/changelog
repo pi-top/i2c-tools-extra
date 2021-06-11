@@ -1,4 +1,4 @@
-i2c-tools-extra (1.0.1-2) unstable; urgency=medium
+i2c-tools-extra (1.0.2-1) unstable; urgency=medium
 
   * Update i2cping source
 
