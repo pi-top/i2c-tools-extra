@@ -4,8 +4,9 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 %:
 	dh $@
 
-override_dh_auto_build:
-	$(MAKE) CFLAGS="$(CPPFLAGS) $(CFLAGS)"
-
 override_dh_auto_install:
-	$(MAKE) install PREFIX=/usr DESTDIR=$(CURDIR)/debian/tmp prefix=/usr libdir=/usr/lib/$(DEB_HOST_MULTIARCH)
+	$(MAKE) install \
+		PREFIX=/usr \
+		DESTDIR=$(CURDIR)/debian/tmp \
+		prefix=/usr \
+		libdir=/usr/lib/$(DEB_HOST_MULTIARCH)

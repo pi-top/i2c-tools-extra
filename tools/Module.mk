@@ -32,10 +32,10 @@ $(TOOLS_DIR)/i2cping: $(TOOLS_DIR)/i2cping.o $(TOOLS_DIR)/i2cbusses.o $(LIB_DEPS
 #
 
 $(TOOLS_DIR)/i2cping.o: $(TOOLS_DIR)/i2cping.c $(TOOLS_DIR)/i2cbusses.h version.h $(INCLUDE_DIR)/i2c/smbus.h
-	$(CC) $(CFLAGS) $(TOOLS_CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(TOOLS_CFLAGS) -c $< -o $@
 
 $(TOOLS_DIR)/i2cbusses.o: $(TOOLS_DIR)/i2cbusses.c $(TOOLS_DIR)/i2cbusses.h
-	$(CC) $(CFLAGS) $(TOOLS_CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(TOOLS_CFLAGS) -c $< -o $@
 
 #
 # Commands

@@ -72,7 +72,7 @@ $(LIB_DIR)/smbus.o: $(LIB_DIR)/smbus.c $(INCLUDE_DIR)/i2c/smbus.h
 	$(CC) $(SOCFLAGS) $(LIB_CFLAGS) -c $< -o $@
 
 $(LIB_DIR)/smbus.ao: $(LIB_DIR)/smbus.c $(INCLUDE_DIR)/i2c/smbus.h
-	$(CC) $(CFLAGS) $(LIB_CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(LIB_CFLAGS) -c $< -o $@
 
 #
 # Commands

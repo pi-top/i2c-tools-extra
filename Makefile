@@ -30,7 +30,7 @@ CFLAGS		?= -O2
 # When debugging, use the following instead
 #CFLAGS		:= -O -g
 CFLAGS		+= -Wall
-SOCFLAGS	:= -fpic -D_REENTRANT $(CFLAGS)
+SOCFLAGS	:= -fpic -D_REENTRANT $(CFLAGS) $(CPPFLAGS)
 
 BUILD_DYNAMIC_LIB ?= 1
 BUILD_STATIC_LIB ?= 1
