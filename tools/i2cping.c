@@ -100,7 +100,7 @@ int main(int argc, char *argv[])
 
 		tmp = strtol(argv[1], &end, 0);
 		if (*end) {
-			fprintf(stderr, "Error: I2C_ADDRESS argment not a "
+			fprintf(stderr, "Error: I2C_ADDRESS argument not a "
 				"number!\n");
 			help();
 			exit(3);
