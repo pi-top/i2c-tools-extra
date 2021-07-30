@@ -2,6 +2,7 @@ Source: i2c-tools-extra
 Section: utils
 Priority: optional
 Build-Depends:
+ libi2c-dev,
  debhelper-compat (= 12),
 Rules-Requires-Root: no
 Standards-Version: 4.5.1
