@@ -1,4 +1,4 @@
-i2c-tools-extra (1.0.2-2) unstable; urgency=medium
+i2c-tools-extra (1.0.2-2) bullseye; urgency=medium
 
   * Use 'multiarch/qemu-user-static:register'
   * Use tonistiigi/binfmt
