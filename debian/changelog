@@ -1,17 +1,9 @@
 i2c-tools-extra (1.0.2-2) bullseye; urgency=medium
 
-  * Use 'multiarch/qemu-user-static:register'
-  * Use tonistiigi/binfmt
-  * Fix typo
   * Fix 'hardening-no-fortify-functions' Lintian warning
-  * Workflow: create draft release manually
-  * New workflows (#7)
   * Add libi2c-dev as build dependency
-  * Update master workflow files
-  * Update master workflow files
   * Bullseye workflows (#9)
-  * Updated master workflow files
-  * Updated master workflow files
+  * Update master workflow files
 
  -- pi-top <deb-maintainers@pi-top.com>  Wed, 01 Sep 2021 20:47:39 +0000
 
