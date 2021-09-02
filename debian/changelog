@@ -1,3 +1,12 @@
+i2c-tools-extra (1.0.2-2) bullseye; urgency=medium
+
+  * Fix 'hardening-no-fortify-functions' Lintian warning
+  * Add libi2c-dev as build dependency
+  * Bullseye workflows (#9)
+  * Update master workflow files
+
+ -- pi-top <deb-maintainers@pi-top.com>  Wed, 01 Sep 2021 20:47:39 +0000
+
 i2c-tools-extra (1.0.2-1) unstable; urgency=medium
 
   * Update i2cping source
