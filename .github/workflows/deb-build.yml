@@ -113,9 +113,9 @@ jobs:
         # Only 1 .dsc is required for source so take armhf if there's multiple
         if: |
           (
-            github.ref == 'refs/heads/master' && \
+            github.ref == 'refs/heads/master' &&
             (
-              needs.check-architecture.outputs.compile_type == 'host' || \
+              needs.check-architecture.outputs.compile_type == 'host' ||
               matrix.architecture == 'armhf'
             )
 
