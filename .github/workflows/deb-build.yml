@@ -38,8 +38,10 @@ jobs:
         run: |
           if grep '^Architecture:' debian/control | grep -q -v 'all'; then
             echo "matrix=$X_COMPILE" >>$GITHUB_OUTPUT
+            echo "compile_type='cross'" >>$GITHUB_OUTPUT
           else
             echo "matrix=$HOST_COMPILE" >>$GITHUB_OUTPUT
+            echo "compile_type='host'" >>$GITHUB_OUTPUT
           fi
 
   build-debian-package:
@@ -106,9 +108,18 @@ jobs:
             !./artifacts/*.deb
             !./artifacts/*.tar.xz
 
-      - name: Upload .dsc to PackageCloud if armhf (cannot upload multiple .dsc files)
+      - name: Upload .dsc to PackageCloud
         uses: pi-top/ghaction-packagecloud@main
-        if: (github.ref == 'refs/heads/master' && matrix.architecture == 'armhf')
+        # Only 1 .dsc is required for source so take armhf if there's multiple
+        if: |
+          (
+            github.ref == 'refs/heads/master' && \
+            (
+              needs.check-architecture.outputs.compile_type == 'host' || \
+              matrix.architecture == 'armhf'
+            )
+
+          )
         with:
           repository: ${{ env.PACKAGECLOUD_REPO }}/${{ env.OS }}/${{ env.DISTRO }}
           files: |
@@ -118,6 +129,7 @@ jobs:
 
       - name: Upload .deb to PackageCloud
         uses: pi-top/ghaction-packagecloud@main
+        if: github.ref == 'refs/heads/master'
         with:
           repository: ${{ env.PACKAGECLOUD_REPO }}/${{ env.OS }}/${{ env.DISTRO }}
           files: |
