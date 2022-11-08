@@ -1,3 +1,15 @@
+i2c-tools-extra (1.0.2-4) bullseye; urgency=medium
+
+  * Updated master workflow files
+  * Add signing key and passphrase to deb_release workflow
+  * Add pull request template
+  * Update PR template to track Github issues
+  * Updated master workflow files
+  * Updated master workflow files
+  * Add 64 bit builds (#14)
+
+ -- pi-top <deb-maintainers@pi-top.com>  Tue, 08 Nov 2022 20:52:47 +0000
+
 i2c-tools-extra (1.0.2-3) bullseye; urgency=medium
 
   * Updated master workflow files
