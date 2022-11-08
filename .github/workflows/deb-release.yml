@@ -37,10 +37,8 @@ jobs:
         run: |
           if grep '^Architecture:' debian/control | grep -q -v 'all'; then
             echo "matrix=$X_COMPILE" >>$GITHUB_OUTPUT
-           echo "compile_type='cross'" >>$GITHUB_OUTPUT
           else
             echo "matrix=$HOST_COMPILE" >>$GITHUB_OUTPUT
-           echo "compile_type='host'" >>$GITHUB_OUTPUT
           fi
 
   release:
@@ -100,7 +98,7 @@ jobs:
           (
             github.ref == 'refs/heads/master' &&
             (
-              needs.check-architecture.outputs.compile_type == 'host' ||
+              matrix.architecture == 'amd64' ||
               matrix.architecture == 'armhf'
             )
 
