@@ -93,7 +93,7 @@ jobs:
 
       - name: Upload .dsc to PackageCloud if armhf (cannot upload multiple .dsc files)
         uses: pi-top/ghaction-packagecloud@main
-        if: matrix.architecture == "armhf"
+        if: matrix.architecture == 'armhf'
         with:
           repository: ${{ env.PACKAGECLOUD_REPO }}/${{ env.OS }}/${{ env.DISTRO }}
           files: |
