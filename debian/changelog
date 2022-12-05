@@ -1,3 +1,9 @@
+i2c-tools-extra (1.0.2-4) bullseye; urgency=medium
+
+  * Add 64 bit builds (#14)
+
+ -- pi-top <deb-maintainers@pi-top.com>  Tue, 08 Nov 2022 20:52:47 +0000
+
 i2c-tools-extra (1.0.2-3) bullseye; urgency=medium
 
   * Updated master workflow files
