@@ -1,3 +1,12 @@
+i2c-tools-extra (1.0.2-5) bullseye; urgency=medium
+
+  * Updated master workflow files
+  * Updated master workflow files
+  * Updated master workflow files
+  * Package for bookworm (#16)
+
+ -- pi-top <deb-maintainers@pi-top.com>  Thu, 22 Feb 2024 14:34:27 +0000
+
 i2c-tools-extra (1.0.2-4) bullseye; urgency=medium
 
   * Add 64 bit builds (#14)
