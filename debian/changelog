@@ -1,3 +1,9 @@
+i2c-tools-extra (1.0.2-6) bullseye; urgency=medium
+
+  * Update release workflow
+
+ -- pi-top <deb-maintainers@pi-top.com>  Thu, 22 Feb 2024 16:45:57 +0000
+
 i2c-tools-extra (1.0.2-5) bullseye; urgency=medium
 
   * Updated master workflow files
