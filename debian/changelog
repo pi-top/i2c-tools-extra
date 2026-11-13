@@ -1,4 +1,4 @@
-i2c-tools-extra (1.0.3-1) bookworm; urgency=medium
+i2c-tools-extra (1.1.0-1) bookworm; urgency=medium
 
   * Allow running the changelog bump by hand
 
